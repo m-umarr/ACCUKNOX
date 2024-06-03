@@ -1,0 +1,257 @@
+{
+	"info": {
+		"_postman_id": "53201874-a1ce-4800-8a54-19761fe69d6a",
+		"name": "AccuknoxAssesment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28153030"
+	},
+	"item": [
+		{
+			"name": "UserAPI",
+			"item": [
+				{
+					"name": "CreateUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"test_user@example.com\",\n  \"password\": \"Password@123\",\n  \"name\": \"Test User\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "127.0.0.1:8000/api/user/register/"
+					},
+					"response": []
+				},
+				{
+					"name": "Profile",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"value": "token a23aea743aa6cc3d1e32e864f383d2bcf86f85ae",
+								"key": "Authorization"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "127.0.0.1:8000/api/user/me/"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"test_user@example.com\",\n  \"password\": \"Password@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "127.0.0.1:8000/api/user/login/"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"value": "token a23aea743aa6cc3d1e32e864f383d2bcf86f85ae",
+								"key": "Authorization"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"test_user@example.com\",\n  \"password\": \"Pakistan@123\",\n  \"name\": \"Test Khan\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "127.0.0.1:8000/api/user/me/"
+					},
+					"response": []
+				},
+				{
+					"name": "PartialUpdate",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"value": "token a23aea743aa6cc3d1e32e864f383d2bcf86f85ae",
+								"key": "Authorization"
+							}
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Name Changed\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "127.0.0.1:8000/api/user/me/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Social",
+			"item": [
+				{
+					"name": "FriendRequest",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"value": "token a23aea743aa6cc3d1e32e864f383d2bcf86f85ae",
+								"key": "Authorization"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8000/api/social/friend-request/?to_user_id=4",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"social",
+								"friend-request",
+								""
+							],
+							"query": [
+								{
+									"key": "to_user_id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FriednRequestActions",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"value": "token a23aea743aa6cc3d1e32e864f383d2bcf86f85ae",
+								"key": "Authorization"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"status\": \"accepted\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "127.0.0.1:8000/api/social/friend-request/6/action/"
+					},
+					"response": []
+				},
+				{
+					"name": "Friends",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"value": "token a23aea743aa6cc3d1e32e864f383d2bcf86f85ae",
+								"key": "Authorization"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "127.0.0.1:8000/api/social/friends/"
+					},
+					"response": []
+				},
+				{
+					"name": "PendingFriendRequest",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"value": "token a23aea743aa6cc3d1e32e864f383d2bcf86f85ae",
+								"key": "Authorization"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "127.0.0.1:8000/api/social/pending-requests/"
+					},
+					"response": []
+				},
+				{
+					"name": "SearchUsers",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"value": "token a23aea743aa6cc3d1e32e864f383d2bcf86f85ae",
+								"key": "Authorization"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8000/api/social/search/?page=1&q=test",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"social",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "q",
+									"value": "test"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
