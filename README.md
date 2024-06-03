@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains the accuknox assesment files to build and run a Docker image for [project name]. 
+This repository contains the accuknox assesment files to build and run a Docker image for accuknox. 
 
 ## Prerequisites
 
